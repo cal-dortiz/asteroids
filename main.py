@@ -1,11 +1,14 @@
-# this allows us to use code from
-# the open-source pygame library
-# throughout this file
 import pygame
 from constants import *
 
 def main():
     pygame.init()
+
+    # Clock for FPS Calc
+    clock = pygame.time.Clock()
+    dt = 0
+
+    # Set GUI
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     while True:
@@ -14,6 +17,8 @@ def main():
                 return
         screen.fill('black')
         pygame.display.flip()
+        dt = clock.tick(60) / 1000
+        
 
     # print("Starting asteroids!")
     # print(f'Screen width: {SCREEN_WIDTH}')
