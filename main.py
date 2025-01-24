@@ -49,6 +49,11 @@ def main():
                 print("Game over!")
                 pygame.quit()
                 sys.exit()
+            for shot_sprite in shot:
+                if shot_sprite.collision(sprite):
+                    sprite.kill()
+                    shot_sprite.kill()
+
 
         dt = clock.tick(60) / 1000
         
