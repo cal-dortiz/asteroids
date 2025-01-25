@@ -51,7 +51,7 @@ def main():
                 sys.exit()
             for shot_sprite in shot:
                 if shot_sprite.collision(sprite):
-                    sprite.kill()
+                    sprite.split()
                     shot_sprite.kill()
 
 
